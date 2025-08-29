@@ -9,67 +9,85 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #181a1b; /* darker background */
-            color: #eaeaea; /* lighter text */
+            background: #0a0a0a; /* even darker background */
+            color: #eaeaea;
         }
         header {
-            background: #111214; /* near black */
+            background: #070707; /* pure black */
             color: #fff;
             padding: 1rem;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.7);
         }
         nav a {
             color: #eaeaea;
             margin: 0 1rem;
             text-decoration: none;
+            transition: color 0.2s;
         }
         nav a:hover {
-            color: #ffd700; /* gold highlight on hover */
+            color: #00ffd0; /* neon cyan highlight */
         }
         main {
             display: flex;
             gap: 2rem;
             padding: 2rem;
+            min-height: 80vh;
         }
         #course-list {
             flex: 1;
-            background: #23272b; /* dark panel */
+            background: #161616; /* blackish panel */
             padding: 1rem;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.7);
         }
         #course-list ul {
             list-style: none;
             padding: 0;
         }
         #course-list li {
-            padding: 0.5rem;
+            padding: 0.75rem;
             cursor: pointer;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #222;
             color: #eaeaea;
+            transition: background 0.2s, color 0.2s;
+        }
+        #course-list li:last-child {
+            border-bottom: none;
         }
         #course-list li:hover {
-            background: #33373b;
-            color: #ffd700;
+            background: #232323;
+            color: #00ffd0;
         }
         #course-content {
             flex: 2;
-            background: #23272b;
+            background: #161616;
             padding: 1rem;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.7);
         }
         #course-content h2, #course-content h3 {
-            color: #ffd700;
+            color: #00ffd0;
+        }
+        #course-content p {
+            color: #cccccc;
         }
         footer {
-            background: #111214;
+            background: #070707;
             color: #fff;
             text-align: center;
             padding: 1rem;
             position: fixed;
             width: 100%;
             bottom: 0;
+            box-shadow: 0 -2px 8px rgba(0,0,0,0.7);
+        }
+        @media (max-width: 800px) {
+            main {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -119,6 +137,7 @@
                     content = `<p>Select a course to view its content.</p>`;
             }
             contentArea.innerHTML = content;
-        }
+             }
     </script>
-<!--
+</body>
+</html>
