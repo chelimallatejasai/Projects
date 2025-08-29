@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        header {
+            background: #2d3e50;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        main {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        #course-list {
+            flex: 1;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        #course-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        #course-list li {
+            padding: 0.5rem;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+        #course-list li:hover {
+            background: #e0e7ef;
+        }
+        #course-content {
+            flex: 2;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        footer {
+            background: #2d3e50;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the E-Learning Platform</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Courses</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header>
+    <main>
+        <section id="course-list">
+            <h2>Available Courses</h2>
+            <ul>
+                <li onclick="showCourse('HTML Basics')">HTML Basics</li>
+                <li onclick="showCourse('CSS Fundamentals')">CSS Fundamentals</li>
+                <li onclick="showCourse('JavaScript Essentials')">JavaScript Essentials</li>
+            </ul>
+        </section>
+        <section id="course-content">
+            <h2>Course Content</h2>
+            <div id="content-area">
+                <p>Select a course to view its content.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 E-Learning Platform</p>
+    </footer>
+    <script>
+        function showCourse(courseName) {
+            const contentArea = document.getElementById('content-area');
+            let content = '';
+            switch (courseName) {
+                case 'HTML Basics':
+                    content = `<h3>HTML Basics</h3><p>Learn the structure of web pages using HTML.</p>`;
+                    break;
+                case 'CSS Fundamentals':
+                    content = `<h3>CSS Fundamentals</h3><p>Style your web pages with CSS.</p>`;
+                    break;
+                case 'JavaScript Essentials':
+                    content = `<h3>JavaScript Essentials</h3><p>Add interactivity to your web pages with JavaScript.</p>`;
+                    break;
+                default:
+                    content = `<p>Select a course to view its content.</p>`;
+            }
+            contentArea.innerHTML = content;
+        }
+    </script>
